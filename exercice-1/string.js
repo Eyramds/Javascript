@@ -27,7 +27,7 @@ function capitalize(chaine) {
     return chaineCapitalized.join(" ");
 }
 
-function camelease(chaine) {
+function camelCase(chaine) {
 
   if (typeof chaine !== "string" || chaine === "" )
     {
@@ -108,3 +108,5 @@ function yoda(chaine) {
 
     return chaine.split(' ').reverse().join(" ");
 }
+
+console.log(capitalize(' test'));
