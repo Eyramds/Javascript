@@ -35,10 +35,9 @@ function camelCase(chaine) {
     
     let chaineCapitalized = [];
 
-    for(word of (chaine.split(' ')) )
+    for(word of (chaine.split(/\s|_/)) )
     {
-        chaineCapitalized.push(ucfirst(word.toLowerCase())) ;
-
+        chaineCapitalized.push(ucfirst(word.toLowerCase()));
     }
 
     return chaineCapitalized.join("");
@@ -108,4 +107,4 @@ function yoda(chaine) {
     return chaine.split(' ').reverse().join(" ");
 }
 
-console.log(capitalize(' test'));
+console.log(camelCase('toggleCase is the_coolest'));
