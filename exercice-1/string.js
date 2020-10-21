@@ -60,12 +60,12 @@ function leet(chaine) {
         return " ";
     }
 
-    chaine.replace(/aA/ , 4);
-    chaine.replaceAll('e' , 3);
-    chaine.replace(/iI/ , 1);
-    chaine.replace(/iI/ , 0);
-    chaine.replace(/uU/ , '_');
-    chaine.replace(/yY/ , 7);
+    chaine.replace(/a|A/ , 4);
+    chaine.replace(/e|E/ , 3);
+    chaine.replace(/i|I/ , 1);
+    chaine.replace(/i|I/ , 0);
+    chaine.replace(/u|U/ , '_');
+    chaine.replace(/y|Y/ , 7);
 
     let chaineReverse = [];
      
