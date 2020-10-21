@@ -37,7 +37,7 @@ function camelCase(chaine) {
 
     for(word of (chaine.split(' ')) )
     {
-        chaineCapitalized.push(ucfirst(word)) ;
+        chaineCapitalized.push(ucfirst(word.toLowerCase())) ;
 
     }
 
