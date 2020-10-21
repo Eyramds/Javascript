@@ -20,8 +20,7 @@ function capitalize(chaine) {
 
     for(word of (chaine.split(' ')) )
     {
-        chaineCapitalized.push(ucfirst(word)) ;
-
+        chaineCapitalized.push(ucfirst(word.toLowerCase())) ;
     }
 
     return chaineCapitalized.join(" ");
@@ -52,7 +51,7 @@ function snake_case(chaine) {
           return "";
       }
     
-      return (chaine.split(' ')).join("_").toLocaleLowerCase();
+      return (chaine.split(' ')).join("_").toLowerCase();
 }
 
 function leet(chaine) {
