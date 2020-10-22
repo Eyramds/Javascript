@@ -47,7 +47,7 @@ function type_check_v2(variable, conf) {
     return true;
 }
 
-function type_check_v3(variable, conf) {
+function type_check(variable, conf) {
     for (toCheck in conf) {
         for (prop in toCheck) {
             switch (toCheck) {
