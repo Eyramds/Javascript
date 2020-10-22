@@ -52,6 +52,14 @@ function type_check(variable, conf) {
                 if (JSON.stringify(variable) !== JSON.stringify(conf.value))
                     return false;
                 break;
+            case "enum":
+                let found = false;
+                for (subValue of conf.enum) {
+                    found = type_check_v2(variable, { value: subValue });
+                    if (found) break;
+                }
+                if (!found) return false;
+                break;
             case "properties":
                 for (prop in toCheck) {
                     switch (prop) {
