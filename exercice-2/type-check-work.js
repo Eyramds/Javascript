@@ -44,34 +44,24 @@ function type_check_v2(variable, conf) {
 
 function type_check(variable, conf) {
     for (toCheck in conf) {
-        switch (toCheck) {
-            case "type":
-                if (type_check_v1(variable, conf.type) === false) return false;
-                break;
-            case "value":
-                if (JSON.stringify(variable) !== JSON.stringify(conf.value))
-                    return false;
-                break;
-            case "properties":
-                for (prop in toCheck) {
-                    switch (prop) {
-                        case "type":
-                            if (type_check_v1(variable, conf.type) === false) return false;
-                            break;
-                        case "value":
-                            if (JSON.stringify(variable) !== JSON.stringify(conf.value))
-                                return false;
-                            break;
-                        case "enum":
-                            let found = false;
-                            for (subValue of conf.enum) {
-                                found = type_check_v2(variable, { value: subValue });
-                                if (found) break;
-                            }
-                            if (!found) return false;
-                            break;
+        for (prop in toCheck) {
+            switch (toCheck) {
+                case "type":
+                    if (type_check_v1(variable, conf.type) === false) return false;
+                    break;
+                case "value":
+                    if (JSON.stringify(variable) !== JSON.stringify(conf.value))
+                        return false;
+                    break;
+                case "enum":
+                    let found = false;
+                    for (subValue of conf.enum) {
+                        found = type_check_v2(variable, { value: subValue });
+                        if (found) break;
                     }
-                }
+                    if (!found) return false;
+                    break;
+            }
         }
     }
     return true;
