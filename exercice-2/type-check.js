@@ -19,11 +19,6 @@ function type_check_v1(variable, type) {
     }
 }
 
-console.log(type_check_v1(null, "null") === true);
-console.log(type_check_v1(null, "object") === false);
-console.log(type_check_v1({}, "null") === false);
-console.log(type_check_v1(undefined, "undefined") === true);
-
 function type_check_v2(variable, conf) {
     for (toCheck in conf) {
         switch (toCheck) {
